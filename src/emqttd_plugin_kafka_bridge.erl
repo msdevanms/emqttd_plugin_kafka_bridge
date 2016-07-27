@@ -239,17 +239,18 @@ on_message_acked(ClientId, Message, _Env) ->
 %% ===================================================================
 
 ekaf_init(_Env) ->
+    {ok, Kafka} = application:get_env(emqttd_plugin_kafka_bridge, kafka),
+
     application:set_env(ekaf, ekaf_partition_strategy, strict_round_robin),
-    %application:set_env(ekaf, ekaf_bootstrap_broker, {"s1.vcd.io", 9092}),
-    application:set_env(ekaf, ekaf_bootstrap_broker, {"117.169.17.148", 9092}),
-    application:set_env(ekaf, ekaf_bootstrap_topics, <<"SYSTEM">>),
+    application:set_env(ekaf, ekaf_bootstrap_broker, {"127.0.0.1", 9092}),
+    application:set_env(ekaf, ekaf_bootstrap_topics, <<"broker_message">>),
 
     {ok, _} = application:ensure_all_started(kafkamocker),
     {ok, _} = application:ensure_all_started(gproc),
     {ok, _} = application:ensure_all_started(ranch),
     {ok, _} = application:ensure_all_started(ekaf),
 
-    io:format("Init ekaf ~n").
+    io:format("Init ekaf with ~p~n", Kafka).
 
 
 %% Called when the plugin application stop
