@@ -51,3 +51,15 @@ Author
 Huang Rui <vowstar@gmail.com>
 
 https://www.devicexx.com
+
+Thanks
+------
+This project is based on the code of:
+
+Erlang MQTT Broker [EMQTTD](https://github.com/emqtt/emqttd)
+
+And learn ideas form:
+
+Gao dongchen's [emqttd_plugin_blackhole](https://github.com/gaodongchen/emqttd_plugin_blackhole)
+
+Abhishek Chawla's [emqttd_publish_client_activity](https://github.com/abhidtu/emqttd_publish_client_activity)
