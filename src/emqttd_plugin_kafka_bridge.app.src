@@ -1,0 +1,13 @@
+{application, emqttd_plugin_kafka_bridge,
+ [
+  {description, "emqttd_plugin_kafka_bridge"},
+  {vsn, "1.1.2"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+                  ekaf
+                 ]},
+  {mod, { emqttd_plugin_kafka_bridge_app, []}},
+  {env, []}
+ ]}.

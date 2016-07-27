@@ -1,0 +1,1 @@
+##emqttd_plugin_kafka_bridge
