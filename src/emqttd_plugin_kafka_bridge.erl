@@ -249,7 +249,7 @@ ekaf_init(_Env) ->
     {ok, _} = application:ensure_all_started(ranch),
     {ok, _} = application:ensure_all_started(ekaf),
 
-    io:format("Init ekaf").
+    io:format("Init ekaf ~n").
 
 
 %% Called when the plugin application stop
