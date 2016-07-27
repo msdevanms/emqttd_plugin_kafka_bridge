@@ -1,7 +1,7 @@
 emqttd_plugin_kafka_bridge
 ===================
 
-emqttd kafka bridge Plugin
+Emqttd kafka bridge Plugin, a bridge transfer messages from emqtt to kafka.
 
 Build Plugin
 ------------
