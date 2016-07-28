@@ -62,7 +62,7 @@ on_client_connected(ConnAck, Client = #mqtt_client{client_id  = ClientId}, _Env)
 
     Json = mochijson2:encode([
         {type, <<"connected">>},
-        {clientid, ClientId},
+        {client_id, ClientId},
         {cluster_node, node()},
         {ts, emqttd_time:now_to_secs()}
     ]),
@@ -82,7 +82,7 @@ on_client_disconnected(Reason, ClientId, _Env) ->
 
     Json = mochijson2:encode([
         {type, <<"disconnected">>},
-        {clientid, ClientId},
+        {client_id, ClientId},
         {reason, Reason},
         {cluster_node, node()},
         {ts, emqttd_time:now_to_secs()}
